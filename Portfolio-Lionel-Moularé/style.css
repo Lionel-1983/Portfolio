@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    height:100vh;
+}
+
+.navbar{
+   border-bottom: 1px solid black; 
+}
+
+.imgProfileAcc{
+    width:150px;
+    border-radius: 10%;
+}
+
+#accueil{
+    min-height:750px;
+}
+
+.imgServices{
+    width:120px;
+    height:120px;
+}
+
+.titreContact{
+    padding: 40px 0 50px 0;
+    margin:100px;
+}   

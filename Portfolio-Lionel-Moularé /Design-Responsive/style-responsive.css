@@ -1,0 +1,449 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 100%;
+
+}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body {
+	font-family:"Ubuntu", Geneva, sans-serif;
+	position: relative;
+	line-height:1.25;
+	font-size: 100%;
+	/*unité grille verticle 16px x 1.25 = 20px
+	soit unité de base 1.25em 
+	*/
+}
+/*typographie*/
+
+
+h1  {
+	font-size: calc( 32em / 16);
+	line-height: calc(40em /32); /*2 unités*/
+	margin-top: calc( 40em/ 32 ); /*2 unité*/
+	margin-bottom: calc(20em/32 ); /*1 unités*/
+
+}
+h2 {
+	font-size: calc(28em / 16);
+	line-height: calc(40em /28); /*2 unité*/
+	margin-top: calc(30em / 48); /*1.5 unité*/
+	margin-bottom: calc(10em / 48); /*0.5 unité*/
+}
+h3 {
+	font-size: calc(22em / 16);
+	line-height: calc(20em / 22); /*1 unités*/
+	margin-top: calc(30em / 22); /*1.5 unité*/
+	margin-bottom: calc(10em / 22);/*0.5 unités */
+}
+h4 {
+	font-size:calc( 16em / 16);
+	line-height: calc(20em / 16);/*1 unité*/
+	margin-top: calc(30em / 16) /*1.5 unité*/
+	margin-bottom: calc(10em / 16) /*0.5 unité*/
+}
+
+p, ul, ol, pre, table, blockquote {
+	margin-top: 0px;
+	margin-bottom: calc(16em / 16); /*1 unité*/
+}
+
+/* fin typographie*/
+
+img {
+	max-width:100%;
+}
+.main-header {
+	background-image: url('img/bkg.jpg');
+	background-position: top center;
+	background-size:cover; 
+	min-height: 100vh;
+	padding: 5%;
+	position: relative;
+}
+.slogan {
+	padding: 1rem;
+	position: absolute;
+	text-align: left;
+	top: 50%;
+	left: 1em;
+}
+.main-header h1 {
+	font-size:2em;
+	font-weight:700;
+	line-height: 1.5em;
+	margin-top: 0;
+	margin-bottom: 0;
+	/*traitement spécial hors grille vertical*
+	du fait du positionnement absolu
+	*/
+}
+.main-header h2 {
+	font-size:1em;
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+	/*traitement spécial hors grille vertical*
+	du fait du positionnement absolu
+	*/
+	/*<<<<<<<<<<< début bouton d'ouverture du menu*************/
+	.open  {
+		position: absolute;
+		top: 2vh;
+		right: 2vw;
+		color: #000;
+		font-size: 1.2em;
+		text-decoration: none;
+		background: transparent url(img/burg.png) no-repeat 85% -25%;
+		padding: 0.1em 2.5em 0em 0;
+	}
+	.open:hover {
+		opacity: 0.3;
+		transition: all 0.5s;
+	}
+	/*<<<<<<<<<<< fin bouton d'ouverture du menu****/
+	/*<<<<<<<<<<< début menu plein ecran *****/
+	.menu-plein-ecran {
+		position: fixed;
+		top:0;
+		left:0;
+		right: 0;
+		bottom:0;
+		background-color: hsl(163, 27.7%, 32%);
+		transition: all 1s;	
+		padding:2vh 2vw 2vw 1vh; 
+		display: none;
+	}
+	.menu-plein-ecran:target {
+		z-index: 800;
+		display: block;
+		transition: all 1s;	
+	}
+	.menu-plein-ecran .close a{
+		position: absolute;
+		top: 2vh;
+		right: 2vw;
+		color: #000;
+		font-size: 1.2em;
+		text-decoration: none;
+		padding: 0.2em 0.4em;
+		background: transparent url(img/burg.png) no-repeat 85% 118%;
+		padding-right: 2.3em;
+		z-index: 1000;
+	}
+	.menu-plein-ecran .close a:hover{
+		opacity: 0.3;
+		transition: all 0.5s;
+	}
+	.content-menu {
+		padding-top: 10vh;
+	}
+	.main-menu a {
+		padding: 0.2em;
+		font-size: 1.1em;
+		display:block;
+		text-decoration: none;
+		color:#fff;
+		/*font-size: 6em;*/
+		font-size: 12vh;
+		/*ici l'emploi de vh est intéressant, car
+		le menu est très gros et se répartira
+		correctement sur la page*/
+	}
+	.main-menu a:hover { 
+		color:#f44336;
+	}
+
+
+	/*règle flex générique*/
+	.container-flex {
+		display: flex;
+	}
+	.xs-ai-center {
+		align-items: center;
+	}
+	.xs-column {
+		flex-flow: column nowrap;
+	}
+	.xs-row-wrap {
+		flex-flow: row wrap;
+	}
+
+	/*grille petit écran*/
+	.xs-col-1 {
+		width: calc(((100% / 12) * 1) - 4%);
+	}
+	.xs-col-2 {
+		width: calc(((100% / 12) * 2) - 4%);
+	}
+	.xs-col-3 {
+		width: calc(((100% / 12) * 3) - 4%);
+	}
+	.xs-col-4 {
+		width: calc(((100% / 12) * 4) - 4%);
+	}
+	.xs-col-5 {
+		width: calc(((100% / 12) * 5) - 4%);
+	}
+	.xs-col-6 {
+		width: calc(((100% / 12) * 6) - 4%);
+	}
+	.xs-col-7 {
+		width: calc(((100% / 12) * 7) - 4%);
+	}
+	.xs-col-8 {
+		width: calc(((100% / 12) * 8) - 4%);
+	}
+	.xs-col-9 {
+		width: calc(((100% / 12) * 9) - 4%);
+	}
+	.xs-col-10 {
+		width: calc(((100% / 12) * 10) - 4%);
+	}
+	.xs-col-11 {
+		width: calc(((100% / 12) * 11) - 4%);
+	}
+	.xs-col-12 {
+		width: calc(((100% / 12) * 12) - 4%);
+	}
+	.has-gutter {
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	/*fin grille petit écran*/
+
+	.specialites {
+		margin:2em 0;
+	}
+	.main-item-article{
+		margin-top: calc( 32em / 16);
+		margin-bottom: calc( 32em / 16);
+	}
+	.main-item-article img {
+		box-shadow:2px 2px 2px #222;
+		}
+
+	.main-item-article .more {
+			color:#549ff3;
+			padding-left: 0.5em;
+			text-decoration:none;
+			line-height:  calc((16em / 16) x 2 ); /*2 unités*/
+			margin-top:  calc(16em / 16); /*1 unité*/
+		}
+	.specialites .more:hover {
+			color:#f00;
+		}
+	footer {
+			background:#ff7fcf;
+			padding:1.25em;
+			/*rythme vertical 1em x 2 (haut et bas) = 1 unité*/
+		}
+
+	/*formulaire */
+
+	.bkg-form {
+		background: url("img/bkg-form.jpg") top center;
+		background-size: cover;
+		padding: 1.25em 0;
+		/*rythme vertical 1em x 2 (haut et bas) = 1 unité*/
+	}
+	.contact-form {
+		text-shadow: 2px 1px 2px #dfdfe0;
+		border-radius: 1em;
+		background: rgba(250, 250, 250, 0.5);
+	}
+	.form-title {
+		text-align: left;
+		color: #669;
+		font-weight: bold;
+	}
+	.label {
+		cursor: pointer;
+		margin-bottom: 1.25em; /*rythme vertical (1 unité)*/
+		color: #669;
+		font-weight: bold;
+		display: block;
+	}
+	.label span {
+		display: block;
+		margin: .75em 0 0.5em 0;
+	}
+	input, .input-like, .textarea {
+		display: block;
+		border-radius: 4px;
+		background-color: #f4f4f4;
+		color: #000;
+		border: 1px solid #5f5f5f;
+		padding: 0.6em 0 0.65em 0.5em;
+		/*rythme vertical = 1 unité : 0.6 + 0.65 =1.25 em */
+	}
+	.textarea {
+		height: calc(200em /16);
+		background: #ededed;
+		font-family: "Ubuntu", arial, sans-serif;
+		font-size: 0.75em;
+	}
+	.button {
+		cursor: pointer;
+		font-weight: bold;
+		border: 1px solid #99a;
+		border-radius: 28px;
+		font-family: Arial;
+		color: #fff;
+		text-decoration: none;
+		margin: 0.5em 0.2em .75em;
+		/*rythme vertical = 1 unité : 0.5 + 0.75 =1.25 em */
+
+	}
+	.button:hover {
+		background: #f00;
+		background-image: linear-gradient(to bottom, #666, #444);
+		text-decoration: none;
+	}
+	.button--send {
+		background: #b9bbde;
+		background-image: linear-gradient(to bottom, #b9bbde, #669);
+
+	}
+	.button--reset {
+		background: #b0b0b0;
+		background-image: linear-gradient(to bottom, #b0b0b0, #6e6e6e);
+		border-radius: 28px;
+	}
+
+	footer a {
+		border-left:1em solid #ededed;
+		color:#ededed;
+		padding-left:.75em;
+		text-decoration:none;
+		display: block;
+		outline: 1px solid #ff7fcf;
+		background:rgba(120,120,120,0.2);
+	}
+
+	footer a:hover {
+		border-color:rgba(120,120,120,0.8);
+		color:#fff;
+		background:rgba(120,120,120,0.8);
+	}
+
+
+	@media screen and (min-width: 655px) {
+
+		/*grille*/
+		.xm-row {
+			flex-flow: row wrap;
+		}
+		.xm-col-1 {
+			width: calc(((100% / 12) * 1) - 4%);
+		}
+		.xm-col-2 {
+			width: calc(((100% / 12) * 2) - 4%);
+		}
+		.xm-col-3 {
+			width: calc(((100% / 12) * 3) - 4%);
+		}
+		.xm-col-4 {
+			width: calc(((100% / 12) * 4) - 4%);
+		}
+		.xm-col-5 {
+			width: calc(((100% / 12) * 5) - 4%);
+		}
+		.xm-col-6 {
+			width: calc(((100% / 12) * 6) - 4%);
+		}
+		.xm-col-7 {
+			width: calc(((100% / 12) * 7) - 4%);
+		}
+		.xm-col-8 {
+			width: calc(((100% / 12) * 8) - 4%);
+		}
+		.xm-col-9 {
+			width: calc(((100% / 12) * 9) - 4%);
+		}
+		.xm-col-10 {
+			width: calc(((100% / 12) * 10) - 4%);
+		}
+		.xm-col-11 {
+			width: calc(((100% / 12) * 11) - 4%);
+		}
+		.xm-col-12 {
+			width: calc(((100% / 12) * 12) - 4%);
+		}
+		.xm-row {
+			flex-flow: row wrap;
+		}
+		.specialites {
+			max-width: 1200px;
+			margin:1.25em auto;
+		}
+		.contact-form {
+			max-width: 900px;
+			margin:0em auto;
+		}
+		.specialites img {
+			box-shadow:0 0 0 .222;
+		}
+		footer ul {
+			margin:0 auto;
+			max-width: 1200px;
+		}
+
+		/* début formulaire */
+		.button {
+			margin: 0.5em 0.2em .75em;
+		}
+		.label {
+			vertical-align: top;
+			text-align: left;
+		}
+		.label span {
+			display: block;
+		}
+		/* fin formulaire */
+
+	}
+
+	@media screen and (min-width: 955px) {
+		.xl-col-1 {
+			width: calc(((100% / 12) * 1) - 4%);
+		}
+		.xl-col-2 {
+			width: calc(((100% / 12) * 2) - 4%);
+		}
+		.xl-col-3 {
+			width: calc(((100% / 12) * 3) - 4%);
+		}
+		.xl-col-4 {
+			width: calc(((100% / 12) * 4) - 4%);
+		}
+		.xl-col-5 {
+			width: calc(((100% / 12) * 5) - 4%);
+		}
+		.xl-col-6 {
+			width: calc(((100% / 12) * 6) - 4%);
+		}
+		.xl-col-7 {
+			width: calc(((100% / 12) * 7) - 4%);
+		}
+		.xl-col-8 {
+			width: calc(((100% / 12) * 8) - 4%);
+		}
+		.xl-col-9 {
+			width: calc(((100% / 12) * 9) - 4%);
+		}
+		.xl-col-10 {
+			width: calc(((100% / 12) * 10) - 4%);
+		}
+		.xl-col-11 {
+			width: calc(((100% / 12) * 11) - 4%);
+		}
+		.xl-col-12 {
+			width: calc(((100% / 12) * 12) - 4%);
+		}
+	}

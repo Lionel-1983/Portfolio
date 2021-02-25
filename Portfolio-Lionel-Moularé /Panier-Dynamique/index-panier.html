@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="app-panier.css">
+
+<script src="app-panier.js" async></script>
+<script>
+ // var produit = "IPhone";
+ // console.log("La valeur de ma variable est : ",produit);
+  //produit = "IPhone6";
+ // console.log("La nouvelle valeur de ma variable est : ",produit);
+</script>
+
+</head>
+<body>
+
+<header>
+  <h2>Ma boutique en ligne </h2>
+  <span>
+        <div id="panier">Vous avez 0 produit dans le panier</div>
+        <img src="panier.png" width="50" onclick="viderPanier()"/>
+  </span>
+</header>
+
+<section>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="maFonctionClick()" >Ipad</a></li>
+      <li><a href="#">Iphone</a></li>
+      <li><a href="#">MacBook Pro</a></li>
+      <li><a href="#">MacBook Air</a></li>
+      <li><a href="#">IWatch</a></li>
+      <li><a href="#">Mac PRO</a></li>
+      <li><a href="#">Ipad PRO</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1 >Ma boutique en ligne</h1>
+    <p id ="detail-panier">Ceci est une iphone maginifque</p>
+    <p>256GO Ecran HD etc ...</p>
+  </article>
+</section>
+
+<footer>
+  <p>Ceci est un Footer</p>
+  <input type="text" id="prod-input"/>
+  <button onclick="addItem()" >ADD</button>
+  <button onclick="deleteItem()" >DELETE</button>
+  
+</footer>
+
+</body>
+</html>
